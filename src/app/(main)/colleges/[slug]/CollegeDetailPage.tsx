@@ -1,8 +1,9 @@
-'use client'
-
 import React from 'react'
 import Link from 'next/link'
 import { Badge } from '@/components/ui/badge'
+import CollegeCTA from "./CollegeCTA"
+
+
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { useFormModal } from '@/context/FormModalContext'
@@ -54,7 +55,7 @@ interface CollegeDetailPageProps {
 }
 
 export default function CollegeDetailPage({ college }: CollegeDetailPageProps) {
-  const { openModal } = useFormModal();
+  // const { openModal } = useFormModal();
   // const country = college.country_ref
   const country = college.country_ref
 
@@ -385,7 +386,7 @@ export default function CollegeDetailPage({ college }: CollegeDetailPageProps) {
                 </div>
 
                 <div className="space-y-4">
-                  <Button
+                  {/* <Button
                     onClick={openModal}
                     className="w-full bg-white text-green-600 hover:bg-green-50 font-black rounded-2xl h-14 group"
                   >
@@ -400,7 +401,8 @@ export default function CollegeDetailPage({ college }: CollegeDetailPageProps) {
                   >
                     <Mail className="w-5 h-5 mr-2" />
                     Request Information
-                  </Button>
+                  </Button> */}
+                  <CollegeCTA />
                 </div>
               </CardContent>
             </Card>

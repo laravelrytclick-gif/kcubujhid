@@ -1,5 +1,6 @@
 import { connectDB } from "@/lib/db";
 import College from "@/models/College";
+import "@/models/Country"; // ✅ REGISTER COUNTRY MODEL
 
 export async function getCollegeBySlug(slug: string) {
   try {
@@ -14,10 +15,8 @@ export async function getCollegeBySlug(slug: string) {
     return {
       ...college,
       _id: college._id.toString(),
-
       createdAt: college.createdAt?.toISOString?.(),
       updatedAt: college.updatedAt?.toISOString?.(),
-
       country_ref: college.country_ref
         ? {
             ...college.country_ref,
